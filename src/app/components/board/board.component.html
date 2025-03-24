@@ -1,0 +1,12 @@
+<div class="game-board">
+    <div *ngFor="let row of board; let i = index">
+      <div
+        *ngFor="let cell of row; let j = index"
+        class="cell"
+        [ngClass]="{ player1: cell.player === 1, player2: cell.player === 2 }"
+        (click)="handleClick(i, j)"
+      >
+        <div *ngFor="let orb of [].constructor(cell.orbs)" class="orb"></div>
+      </div>
+    </div>
+  </div>
